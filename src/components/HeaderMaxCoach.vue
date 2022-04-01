@@ -92,6 +92,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 5rem;
   background-color: $cc-white;
   // Stile per la parte sinistra dell'header
   .header-left {
@@ -119,8 +120,21 @@ header {
   .header-right {
     flex-basis: 25%;
     text-align: right;
+    height: 100%;
+    #select-language {
+      height: 100%;
+      border: none;
+      text-transform: uppercase;
+    }
+    #search {
+      height: 100%;
+      border: none;
+      border-left: 1px solid $mc-porcelain;
+      padding-left: 1rem;
+    }
     .btn-user,
     .btn-search {
+      margin: 0 1rem;
       background-color: transparent;
       border: none;
       cursor: pointer;
