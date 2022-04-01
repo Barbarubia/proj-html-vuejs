@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header-max-coach /> <!-- Componente che contiene l'header del sito -->
+    <main-max-coach /> <!-- Componente che contiene il contenuto del sito, diviso in sezioni -->
+    <footer-max-coach /> <!-- Componente che contiene il footer del sito -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FooterMaxCoach from './components/FooterMaxCoach.vue'
+import HeaderMaxCoach from './components/HeaderMaxCoach.vue'
+import MainMaxCoach from './components/MainMaxCoach.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderMaxCoach,
+    MainMaxCoach,
+    FooterMaxCoach
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
