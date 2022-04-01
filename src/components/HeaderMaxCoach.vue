@@ -19,10 +19,14 @@
         <option v-for="language in arrLanguages" :key="language.value" value="language.value" :selected="language.value === 'en' ? true : false">{{ language.name }}</option>
       </select>
       <!-- Bottone profilo utente -->
-      <button class="btn-user">Profilo</button>  <!-- TODO: integrare font-awesome per l'icona -->
+      <button class="btn-user">
+        <font-awesome-icon icon="fa-regular fa-circle-user" />
+      </button>
       <!-- Barra di ricerca -->
-      <input type="text" name="search" id="search">
-      <button class="btn-search">Cerca</button> <!-- TODO: integrare font-awesome per l'icona -->
+      <input type="text" name="search" id="search" placeholder="Search...">
+      <button class="btn-search">
+        <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
+      </button>
     </div>
   </header>
 </template>
