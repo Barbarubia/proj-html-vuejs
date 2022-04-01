@@ -8,13 +8,22 @@
     <nav class="header-middle">
       <ul>
         <li v-for="element in arrLinks" :key="element.name"><a href="element.url">{{element.name}}</a></li>
+        <!-- TODO: aggiungere freccetta verso il basso con ::after da font-awesome -->
       </ul>
     </nav>
-    <!-- Selezione lingua, profilo utente e search a destra -->
-    <div class="header-right"></div>
-    <select name="select-language" id="select-language">
-      <option v-for="language in arrLanguages" :key="language.value" value="language.value" :selected="language.value === 'en' ? true : false">{{ language.name }}</option>
-    </select>
+    <!-- Header parte destra -->
+    <div class="header-right">
+      <!-- Scelta lingua -->
+      <!-- TODO: aggiungere funzione che mostra la bandiera in base alla lingua selezionata -->
+      <select name="select-language" id="select-language">
+        <option v-for="language in arrLanguages" :key="language.value" value="language.value" :selected="language.value === 'en' ? true : false">{{ language.name }}</option>
+      </select>
+      <!-- Bottone profilo utente -->
+      <button class="btn-user">Profilo</button>  <!-- TODO: integrare font-awesome per l'icona -->
+      <!-- Barra di ricerca -->
+      <input type="text" name="search" id="search">
+      <button class="btn-search">Cerca</button> <!-- TODO: integrare font-awesome per l'icona -->
+    </div>
   </header>
 </template>
 
@@ -105,6 +114,13 @@ header {
   // Stile per la parte destra dell'header
   .header-right {
     flex-basis: 25%;
+    text-align: right;
+    .btn-user,
+    .btn-search {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
   }
 }
 </style>
