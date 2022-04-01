@@ -12,6 +12,9 @@
     </nav>
     <!-- Selezione lingua, profilo utente e search a destra -->
     <div class="header-right"></div>
+    <select name="select-language" id="select-language">
+      <option v-for="language in arrLanguages" :key="language.value" value="language.value" :selected="language.value === 'en' ? true : false">{{ language.name }}</option>
+    </select>
   </header>
 </template>
 
@@ -44,6 +47,23 @@ export default {
         {
           url: '#',
           name: 'Shop'
+        }
+      ],
+      arrLanguages: [
+        {
+          imgFlag: 'de.png',
+          value: 'de',
+          name: 'German'
+        },
+        {
+          imgFlag: 'en.png',
+          value: 'en',
+          name: 'English'
+        },
+        {
+          imgFlag: 'fr.png',
+          value: 'fr',
+          name: 'French'
         }
       ]
     }
