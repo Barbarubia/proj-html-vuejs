@@ -7,16 +7,20 @@
     <!-- Menu al centro -->
     <nav class="header-middle">
       <ul>
-        <li v-for="element in arrLinks" :key="element.name"><a href="element.url">{{element.name}}</a></li>
+        <li v-for="element in arrLinks" :key="element.name">
+          <a href="element.url">
+            {{element.name}}
+          </a>
+        </li>
         <!-- TODO: aggiungere freccetta verso il basso con ::after da font-awesome -->
       </ul>
     </nav>
     <!-- Header parte destra -->
     <div class="header-right">
       <!-- Scelta lingua -->
-      <!-- TODO: aggiungere funzione che mostra la bandiera in base alla lingua selezionata -->
-      <select name="select-language" id="select-language">
-        <option v-for="language in arrLanguages" :key="language.value" value="language.value" :selected="language.value === 'en' ? true : false">{{ language.name }}</option>
+      <img :src="require('../assets/img/' + selectedLanguage + '.png')" :alt="'flag' + selectedLanguage">
+      <select @change="setLanguage($event)" v-model="selectedLanguage" name="select-language" id="select-language">
+        <option v-for="language in arrLanguages" :key="language.value" :value="language.value" :selected="language.value === 'en' ? true : false">{{ language.name }}</option>
       </select>
       <!-- Bottone profilo utente -->
       <button class="btn-user">
@@ -36,6 +40,7 @@ export default {
   name: 'HeaderMaxCoach',
   data () {
     return {
+      selectedLanguage: 'en',
       arrLinks: [
         {
           url: '#',
@@ -80,6 +85,11 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    setLanguage (event) {
+      this.selectedLanguage = event.target.value
+    }
   }
 }
 </script>
@@ -118,11 +128,15 @@ header {
   }
   // Stile per la parte destra dell'header
   .header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     flex-basis: 25%;
     text-align: right;
     height: 100%;
     #select-language {
       height: 100%;
+      padding-left: .5rem;
       border: none;
       text-transform: uppercase;
     }
