@@ -11,5 +11,6 @@ export default {
 <style lang="scss" scoped>
 main {
   background-color: cyan; //provvisorio
+  height: 20rem; //provvisorio
 }
 </style>
