@@ -18,7 +18,7 @@
                   <h3 v-if="element.category !== ''">{{ element.category }}</h3>
                   <h3 v-else class="blank-h3"></h3>
                   <ul class="footer-sublist">
-                      <li v-for="(sublink, subindex) in element.subLinks" :key="subindex"><a href="sublink.href">{{ sublink.name }}</a></li>
+                      <li v-for="(sublink, index) in element.subLinks" :key="index"><a :href="sublink.href">{{ sublink.name }}</a></li>
                   </ul>
               </li>
           </ul>

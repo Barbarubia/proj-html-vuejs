@@ -8,12 +8,11 @@
     <nav class="header-middle">
       <ul>
         <li v-for="element in arrLinks" :key="element.name">
-          <a href="element.url">
+          <a :href="element.href">
             {{element.name}}
             <font-awesome-icon class="angle-down-icon" icon="fa-solid fa-angle-down" />
           </a>
         </li>
-        <!-- TODO: aggiungere freccetta verso il basso con ::after da font-awesome -->
       </ul>
     </nav>
     <!-- Header parte destra -->
@@ -44,27 +43,27 @@ export default {
       selectedLanguage: 'en',
       arrLinks: [
         {
-          url: '#',
+          href: '#',
           name: 'Home'
         },
         {
-          url: '#',
+          href: '#',
           name: 'Pages'
         },
         {
-          url: '#',
+          href: '#',
           name: 'Courses'
         },
         {
-          url: '#',
+          href: '#',
           name: 'Features'
         },
         {
-          url: '#',
+          href: '#',
           name: 'Blog'
         },
         {
-          url: '#',
+          href: '#',
           name: 'Shop'
         }
       ],
