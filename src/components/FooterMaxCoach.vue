@@ -1,7 +1,8 @@
 <template>
   <footer>
       <div class="container-900">
-        <div class="column footer-left">
+        <!-- Parte sinistra del footer con indirizzo, contatti e socials -->
+        <div class="column">
           <ul class="footer-list footer-list-contacts">
               <li><h3>Address</h3></li>
               <li v-for="element in objContacts" :key="element">{{ element }}</li>
@@ -10,16 +11,22 @@
             <a v-for="social in arrLinksSocials" :key="social.name" :href="social.href"><font-awesome-icon :icon="'fa-brands ' + social.icon" /></a>
           </div>
         </div>
+        <!-- Parte destra del footer con tutti i link -->
         <div class="column">
           <ul class="footer-list">
               <li v-for="(element, index) in arrLinksFooter" :key="index">
-                  <h3>{{ element.category }}</h3>
+                  <h3 v-if="element.category !== ''">{{ element.category }}</h3>
+                  <h3 v-else class="blank-h3"></h3>
                   <ul class="footer-sublist">
                       <li v-for="(sublink, subindex) in element.subLinks" :key="subindex"><a href="sublink.href">{{ sublink.name }}</a></li>
                   </ul>
               </li>
           </ul>
         </div>
+      </div>
+      <!-- Copyright -->
+      <div class="container-900 copyright">
+        <font-awesome-icon icon="fa-regular fa-copyright" />&nbsp;2022 Maxcoach. All Rights Reserved
       </div>
   </footer>
 </template>
@@ -75,7 +82,7 @@ export default {
           ]
         },
         {
-          category: '.',
+          category: '',
           subLinks: [
             {
               href: '#',
@@ -123,7 +130,7 @@ export default {
 @import "../assets/scss/partials/general";
 
 footer {
-  padding: 2rem 0;
+  padding: 3rem 0;
   background-color: #171621;
   color: $cc-silver;
   .container-900 {
@@ -141,6 +148,9 @@ footer {
         h3 {
           font-size: 1rem;
           color: $cc-white;
+        }
+        .blank-h3::after {
+          content: '\00a0';
         }
         .footer-sublist {
           list-style: none;
@@ -163,6 +173,10 @@ footer {
           color: $cc-silver;
         }
       }
+    }
+    &.copyright {
+      margin-top: 3rem;
+      justify-content: center;
     }
   }
 }
