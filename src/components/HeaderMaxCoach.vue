@@ -10,6 +10,7 @@
         <li v-for="element in arrLinks" :key="element.name">
           <a href="element.url">
             {{element.name}}
+            <font-awesome-icon class="angle-down-icon" icon="fa-solid fa-angle-down" />
           </a>
         </li>
         <!-- TODO: aggiungere freccetta verso il basso con ::after da font-awesome -->
@@ -122,6 +123,11 @@ header {
         a {
           color: $cc-tuna;
           text-decoration: none;
+          .angle-down-icon {
+            padding-left: .5rem;
+            font-size: .7rem;
+            vertical-align: middle;
+          }
         }
       }
     }
