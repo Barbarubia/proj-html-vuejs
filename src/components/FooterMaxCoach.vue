@@ -7,6 +7,7 @@
               <li v-for="element in objContacts" :key="element">{{ element }}</li>
           </ul>
           <div class="links-socials">
+            <a v-for="social in arrLinksSocials" :key="social.name" :href="social.href"><font-awesome-icon :icon="'fa-brands ' + social.icon" /></a>
           </div>
         </div>
         <div class="column">
@@ -33,6 +34,28 @@ export default {
         telephone: '+1 (305) 547-9909 (9am - 5pm EST, Monday - Friday)',
         eMail: 'support@maxcoach.com'
       },
+      arrLinksSocials: [
+        {
+          name: 'Facebook',
+          href: '#',
+          icon: 'fa-facebook-square'
+        },
+        {
+          name: 'Twitter',
+          href: '#',
+          icon: 'fa-twitter'
+        },
+        {
+          name: 'Instagram',
+          href: '#',
+          icon: 'fa-instagram'
+        },
+        {
+          name: 'Linkedin',
+          href: '#',
+          icon: 'fa-linkedin'
+        }
+      ],
       arrLinksFooter: [
         {
           category: 'Explore',
@@ -128,6 +151,15 @@ footer {
         }
         a {
           text-decoration: none;
+          color: $cc-silver;
+        }
+      }
+      .links-socials {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        a {
           color: $cc-silver;
         }
       }
