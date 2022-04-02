@@ -1,16 +1,23 @@
 <template>
-  <main>Main</main>
+  <main>
+    <!-- Sezione Hero -->
+    <hero-section />
+  </main>
 </template>
 
 <script>
+import HeroSection from './Main_components/HeroSection.vue'
+
 export default {
-  name: 'MainMaxCoach'
+  name: 'MainMaxCoach',
+  components: {
+    HeroSection
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 main {
   background-color: cyan; //provvisorio
-  height: 20rem; //provvisorio
 }
 </style>

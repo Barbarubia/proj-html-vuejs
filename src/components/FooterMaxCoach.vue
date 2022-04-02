@@ -1,6 +1,6 @@
 <template>
   <footer>
-      <div class="container-900">
+      <div class="container-narrow">
         <!-- Parte sinistra del footer con indirizzo, contatti e socials -->
         <div class="column">
           <ul class="footer-list footer-list-contacts">
@@ -25,7 +25,7 @@
         </div>
       </div>
       <!-- Copyright -->
-      <div class="container-900 copyright">
+      <div class="container-narrow copyright">
         <font-awesome-icon icon="fa-regular fa-copyright" />&nbsp;2022 Maxcoach. All Rights Reserved
       </div>
   </footer>
@@ -133,7 +133,7 @@ footer {
   padding: 3rem 0;
   background-color: #171621;
   color: $cc-silver;
-  .container-900 {
+  .container-narrow {
     display: flex;
     .column {
       width: 50%;
