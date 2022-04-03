@@ -27,7 +27,7 @@
         <font-awesome-icon icon="fa-regular fa-circle-user" />
       </button>
       <!-- Barra di ricerca -->
-      <input type="text" name="search" id="search" placeholder="Search...">
+      <input type="text" name="search" id="search" :placeholder="strPlaceHolderSearch">
       <button class="btn-search">
         <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
       </button>
@@ -41,6 +41,7 @@ export default {
   data () {
     return {
       selectedLanguage: 'en',
+      strPlaceHolderSearch: 'Search...',
       arrLinks: [
         {
           href: '#',
