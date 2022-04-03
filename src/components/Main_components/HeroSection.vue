@@ -1,11 +1,13 @@
 <template>
   <section>
-    <div class="container-narrow">
+    <div class="container-wide">
       <div class="column column-left">
-        <h3 class="subtitle">{{ columnLeftContent.subtitle }}</h3>
-        <h1 class="title">{{ columnLeftContent.title }}</h1>
-        <p>{{ columnLeftContent.text }}</p>
-        <button>{{ columnLeftContent.button }}</button>
+        <div class="column-content">
+          <h3 class="subtitle">{{ columnLeftContent.subtitle }}</h3>
+          <h1 class="title">{{ columnLeftContent.title }}</h1>
+          <p>{{ columnLeftContent.text }}</p>
+          <button class="btn">{{ columnLeftContent.button }}</button>
+        </div>
       </div>
       <div class="column column-right">
         <img src="../../assets/img/home-business-hero-avatar.png" alt="Hero Avatar">
@@ -34,12 +36,9 @@ export default {
 @import "../../assets/scss/partials/variables";
 
 section {
-  position: relative;
-  padding-top: 2rem;
   background-color: $md-link-water;
-  // background-image: url("../../assets/img/home-business-hero-global-image.png");
-  // background-repeat: no-repeat;
-  .container-narrow {
+  .container-wide {
+    position: relative;
     display: flex;
     .column {
       width: 50%;
@@ -47,35 +46,34 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
-        gap: 1rem;
-        .title {
-          font-size: 3rem;
-          text-transform: uppercase;
-        }
-        .subtitle {
-          font-size: 1.5rem;
-          color: $md-jungle-green;
-        }
-        p {
-          font-weight: 500;
-          color: $cc-boulder;
+        align-items: flex-end;
+        .column-content {
+          max-width: 500px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 1rem;
+          .title {
+            font-size: 3rem;
+            text-transform: uppercase;
+          }
+          .subtitle {
+            font-size: 1.5rem;
+            color: $md-jungle-green;
+          }
+          p {
+            font-weight: 500;
+            color: $cc-boulder;
+          }
         }
       }
       &.column-right {
+        padding-top: 4rem;
         display: flex;
-        z-index: 0;
-      }
-      &.column-right::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        width: 50%;
-        height: 100%;
         background-image: url("../../assets/img/home-business-hero-global-image.png");
         background-repeat: no-repeat;
-        background-size: 70%;
-        z-index: -1;
+        background-size: contain;
       }
     }
   }
