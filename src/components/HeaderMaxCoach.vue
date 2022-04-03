@@ -71,7 +71,7 @@ export default {
         {
           imgFlag: 'de.png',
           value: 'de',
-          name: 'German'
+          name: 'Deutsch'
         },
         {
           imgFlag: 'en.png',
@@ -81,7 +81,7 @@ export default {
         {
           imgFlag: 'fr.png',
           value: 'fr',
-          name: 'French'
+          name: 'Français'
         }
       ]
     }

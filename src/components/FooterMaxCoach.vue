@@ -4,7 +4,7 @@
         <!-- Parte sinistra del footer con indirizzo, contatti e socials -->
         <div class="column">
           <ul class="footer-list footer-list-contacts">
-              <li><h3>Address</h3></li>
+              <li><h3>{{ strAddress }}</h3></li>
               <li v-for="element in objContacts" :key="element">{{ element }}</li>
           </ul>
           <div class="links-socials">
@@ -26,7 +26,7 @@
       </div>
       <!-- Copyright -->
       <div class="container-narrow copyright">
-        <font-awesome-icon icon="fa-regular fa-copyright" />&nbsp;2022 Maxcoach. All Rights Reserved
+        <font-awesome-icon icon="fa-regular fa-copyright" />&nbsp;{{ strCopyright }}
       </div>
   </footer>
 </template>
@@ -36,6 +36,7 @@ export default {
   name: 'FooterMaxCoach',
   data () {
     return {
+      strAddress: 'Address',
       objContacts: {
         address: '382 NE 191st St # 87394 Miami, FL 33179-3899',
         telephone: '+1 (305) 547-9909 (9am - 5pm EST, Monday - Friday)',
@@ -119,7 +120,8 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      strCopyright: '2022 Maxcoach. All Rights Reserved'
     }
   }
 }
