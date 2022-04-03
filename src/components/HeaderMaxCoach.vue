@@ -154,6 +154,7 @@ header {
     }
     .btn-user,
     .btn-search {
+      font-size: 1.3rem;
       margin: 0 1rem;
       background-color: transparent;
       border: none;
