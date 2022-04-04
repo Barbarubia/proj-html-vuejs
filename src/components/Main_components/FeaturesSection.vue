@@ -6,8 +6,11 @@
       <!-- Cards con tutte le features -->
       <div class="features-cards-container">
         <div v-for="card in arrCards" :key="card.title" class="features-card">
-          <h3>{{ card.title }}</h3>
-          <p>{{ card.text }}</p>
+          <img :src="require('../../assets/img/edit/' + card.image)" :alt="card.title">
+          <div>
+            <h3>{{ card.title }}</h3>
+            <p>{{ card.text }}</p>
+          </div>
         </div>
       </div>
       <!-- Bottoni -->
@@ -31,26 +34,32 @@ export default {
       arrCards: [
         {
           title: 'One to One',
+          image: 'feature-card-01.png',
           text: 'Getting the necessary clarity about the current state to help you improve your game.'
         },
         {
           title: 'Anywhere',
+          image: 'feature-card-02.png',
           text: 'Access to valuable and portable program which allow you to setup and live anywhere you want.'
         },
         {
           title: 'On Time',
+          image: 'feature-card-03.png',
           text: 'Punctuality is our top priority because it\'s an essential criteria to assess a program quality.'
         },
         {
           title: 'Online Courses',
+          image: 'feature-card-04.png',
           text: 'Online business coaching now offers you a very powerful way to empower your business into success.'
         },
         {
           title: 'Consulting',
+          image: 'feature-card-05.png',
           text: 'You will get a clear sense of direction for your business, thorough assessment and faster results.'
         },
         {
           title: 'Self Development',
+          image: 'feature-card-06.png',
           text: 'Business COaching often keep your focus and develop you both in a professional and personal way.'
         }
       ]
@@ -78,8 +87,16 @@ section {
       display: flex;
       flex-wrap: wrap;
       .features-card {
+        display: flex;
+        align-items: flex-start;
         width: calc(100% / 3 - 2rem);
         margin: 1rem;
+        img {
+          padding-right: 2.5rem;
+        }
+        p {
+          color: $cc-boulder;
+        }
       }
     }
     .btn-container {

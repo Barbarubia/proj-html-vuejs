@@ -72,7 +72,7 @@ section {
         padding-top: 4rem;
         padding-left: 1.5rem;;
         display: flex;
-        background-image: url("../../assets/img/home-business-hero-global-image2.png");
+        background-image: url("../../assets/img/edit/home-business-hero-global-image2.png");
         background-repeat: no-repeat;
         background-size: contain;
       }
