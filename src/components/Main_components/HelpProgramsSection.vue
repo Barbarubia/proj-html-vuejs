@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="dots">
-        <div v-for="(i, index) in arrHelpCards" :key="i" :class="index == activeIndex ? 'active' : ''" @click="activeIndex = index"><font-awesome-icon icon="fa-solid fa-circle" /></div>
+        <div v-for="(i, index) in arrHelpCards" :key="index" :class="index == activeIndex ? 'active' : ''" @click="activeIndex = index"><font-awesome-icon icon="fa-solid fa-circle" /></div>
       </div>
     </div>
   </section>
