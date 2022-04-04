@@ -90,7 +90,7 @@ section {
         display: flex;
         align-items: flex-start;
         width: calc(100% / 3 - 2rem);
-        margin: 1rem;
+        margin: 2rem 1rem;
         img {
           padding-right: 2.5rem;
         }

@@ -6,7 +6,7 @@
       <!-- Slider delle cards con la descrizione dei tipi di supporto disponibili -->
       <div class="help-cards-container">
         <div @mouseover="stopAutoplay" @mouseleave="autoplay" v-for="card in arrHelpCards[activeIndex]" :key="card.id" class="help-card">
-          <img v-if="card.loremPicsum === false" :src="require('../../assets/img/' + card.image)" :alt="card.title">
+          <img v-if="card.externalUrlImage === false" :src="require('../../assets/img/' + card.image)" :alt="card.title">
           <img v-else :src="card.image" :alt="card.title">
           <h3>{{ card.title }}</h3>
           <p>{{ card.text }}</p>
@@ -36,21 +36,21 @@ export default {
             id: 1,
             title: 'Consultative Training',
             image: 'home-business-service-slide-01-480x298.jpg',
-            loremPicsum: false,
+            externalUrlImage: false,
             text: 'With a coach addressing multiple issues that are off balance, affecting your business in various unconsidered ways'
           },
           {
             id: 2,
             title: 'Real Deal Coaching',
             image: 'home-business-service-slide-02-480x298.jpg',
-            loremPicsum: false,
+            externalUrlImage: false,
             text: 'Brings an exceptionally powerful opportunity. Being able to accept, to work with that opportunity.'
           },
           {
             id: 3,
             title: 'Advisor Training Program',
             image: 'home-business-service-slide-03-480x298.jpg',
-            loremPicsum: false,
+            externalUrlImage: false,
             text: 'Getting high quality, entrepreneur mindset driven online business coaching, is what is needed.'
           }
         ],
@@ -59,21 +59,21 @@ export default {
             id: 4,
             title: 'Lorem Ipsum',
             image: 'https://picsum.photos/id/1/480/298',
-            loremPicsum: true,
+            externalUrlImage: true,
             text: 'Ratione neque labore consectetur sed dolorum impedit perspiciatis eum nulla vitae eligendi, repellat molestias.'
           },
           {
             id: 5,
             title: 'Lorem Ipsum',
             image: 'https://picsum.photos/id/119/480/298',
-            loremPicsum: true,
+            externalUrlImage: true,
             text: 'Ratione neque labore consectetur sed dolorum impedit perspiciatis eum nulla vitae eligendi, repellat molestias.'
           },
           {
             id: 6,
             title: 'Lorem Ipsum',
             image: 'https://picsum.photos/id/160/480/298',
-            loremPicsum: true,
+            externalUrlImage: true,
             text: 'Ratione neque labore consectetur sed dolorum impedit perspiciatis eum nulla vitae eligendi, repellat molestias.'
           }
         ],
@@ -82,21 +82,21 @@ export default {
             id: 7,
             title: 'Magnam Itaque',
             image: 'https://picsum.photos/id/180/480/298',
-            loremPicsum: true,
+            externalUrlImage: true,
             text: 'Iure a debitis nihil ab consequuntur iusto. Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
           },
           {
             id: 8,
             title: 'Magnam Itaque',
             image: 'https://picsum.photos/id/201/480/298',
-            loremPicsum: true,
+            externalUrlImage: true,
             text: 'Iure a debitis nihil ab consequuntur iusto. Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
           },
           {
             id: 9,
             title: 'Magnam Itaque',
             image: 'https://picsum.photos/id/366/480/298',
-            loremPicsum: true,
+            externalUrlImage: true,
             text: 'Iure a debitis nihil ab consequuntur iusto. Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
           }
         ]
