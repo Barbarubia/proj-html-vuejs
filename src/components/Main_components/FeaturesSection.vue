@@ -5,7 +5,7 @@
       <h2 class="title">{{ sectionTitle }}</h2>
       <!-- Cards con tutte le features -->
       <div class="features-cards-container">
-        <div v-for="card in arrCards" :key="card.title" class="features-card">
+        <div v-for="card in arrFeaturesCards" :key="card.title" class="features-card">
           <img :src="require('../../assets/img/edit/' + card.image)" :alt="card.title">
           <div>
             <h3>{{ card.title }}</h3>
@@ -31,7 +31,7 @@ export default {
       sectionSubtitle: 'Let\'s Dream Big Together',
       buttonLearn: 'Learn more',
       buttonStart: 'Get started today',
-      arrCards: [
+      arrFeaturesCards: [
         {
           title: 'One to One',
           image: 'feature-card-01.png',
@@ -95,6 +95,7 @@ section {
           padding-right: 2.5rem;
         }
         p {
+          margin-top: 1rem;
           color: $cc-boulder;
         }
       }
