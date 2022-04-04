@@ -10,7 +10,7 @@
           <h3>{{ card.title }}</h3>
           <p>{{ card.text }}</p>
           <hr>
-          <button class="btn btn-2">{{ strButton }}</button>
+          <button class="btn btn-2">{{ strButton }}&nbsp;<font-awesome-icon icon="fa-solid fa-arrow-right-long" /></button>
         </div>
       </div>
     </div>
@@ -60,19 +60,24 @@ section {
     .help-cards-container {
       width: 100%;
       display: flex;
+      gap: 2rem;
       .help-card {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: calc(100% / 3 - 2rem);
-        margin: 1rem;
+        width: calc(100% / 3);
+        // margin: 1rem;
         background-color: $cc-white;
+        border-radius: .5em;
         img {
           width: 100%;
           margin-bottom: 2rem;
+          border-top-left-radius: .5em;
+          border-top-right-radius: .5em;
         }
         p {
           padding: 1.5rem;
+          flex-grow: 1;
           text-align: center;
           color: $cc-boulder;
         }
@@ -83,7 +88,19 @@ section {
         .btn, .btn-2 {
           width: 100%;
           border: none;
-          border-radius: none;
+          border-radius: 0;
+          border-bottom-left-radius: .5em;
+          border-bottom-right-radius: .5em;
+          // &:hover {
+          //   background-color: $md-jungle-green;
+          //   color: $cc-white;
+          // }
+        }
+        &:hover {
+          .btn {
+            background-color: $md-jungle-green;
+            color: $cc-white;
+          }
         }
       }
     }
