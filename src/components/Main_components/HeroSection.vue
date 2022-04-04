@@ -6,7 +6,7 @@
           <h3 class="subtitle">{{ columnLeftContent.subtitle }}</h3>
           <h1 class="title">{{ columnLeftContent.title }}</h1>
           <p>{{ columnLeftContent.text }}</p>
-          <button class="btn">{{ columnLeftContent.button }}</button>
+          <button class="btn btn-1">{{ columnLeftContent.button }}</button>
         </div>
       </div>
       <div class="column column-right">
@@ -48,7 +48,7 @@ section {
         justify-content: center;
         align-items: flex-end;
         .column-content {
-          max-width: 500px;
+          max-width: calc($container-narrow-width / 2);
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -58,10 +58,10 @@ section {
             font-size: 3rem;
             text-transform: uppercase;
           }
-          .subtitle {
-            font-size: 1.5rem;
-            color: $md-jungle-green;
-          }
+          // .subtitle {
+          //   font-size: 1.5rem;
+          //   color: $md-jungle-green;
+          // }
           p {
             font-weight: 500;
             color: $cc-boulder;

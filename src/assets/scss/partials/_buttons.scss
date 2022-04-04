@@ -1,9 +1,17 @@
 .btn {
-    padding: 1rem 2rem;
-    background-color: $md-jungle-green;
-    border: none;
+    min-width: 200px;
+    padding: 1rem;
     border-radius: .5em;
-    color: $cc-white;
     font-weight: 600;
     cursor: pointer;
+    &.btn-1 {
+        background-color: $md-jungle-green;
+        border: 1px solid transparent;
+        color: $cc-white;
+    }
+    &.btn-2 {
+        background-color: $cc-white;
+        border: 1px solid $cc-silver;
+        color: $md-jungle-green;
+    }
 }

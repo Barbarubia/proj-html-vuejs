@@ -1,13 +1,24 @@
+// FONT
 html {
     font-family: 'Be Vietnam Pro', Arial, sans-serif;
 }
 
+// CONTAINERS
 .container-narrow {
-    max-width: 1000px;
+    max-width: $container-narrow-width;
     margin: 0 auto;
 }
 
 .container-wide {
-    max-width: 1400px;
+    max-width: $container-wide-width;
     margin: 0 auto;
+}
+
+// TITOLI E SOTTOTITOLI
+.title {
+    font-size: 2rem;
+}
+.subtitle {
+    font-size: 1.5rem;
+    color: $md-jungle-green;
 }
