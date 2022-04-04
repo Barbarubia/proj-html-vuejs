@@ -1,17 +1,21 @@
 .btn {
     min-width: 200px;
     padding: 1rem;
+    border: 1px solid transparent;
     border-radius: .5em;
     font-weight: 600;
     cursor: pointer;
     &.btn-1 {
         background-color: $md-jungle-green;
-        border: 1px solid transparent;
         color: $cc-white;
     }
     &.btn-2 {
         background-color: $cc-white;
         border: 1px solid $cc-silver;
         color: $md-jungle-green;
+    }
+    &:hover {
+        background-color: $cc-tuna;
+        color: $cc-white;
     }
 }
