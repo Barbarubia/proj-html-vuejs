@@ -5,7 +5,7 @@ import App from './App.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 /* import specific icons */
-import { faAngleDown, faMagnifyingGlass, faArrowRightLong, faCircle } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faMagnifyingGlass, faArrowRightLong, faCircle, faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCircleUser, faCopyright, faFileLines, faUser } from '@fortawesome/free-regular-svg-icons'
 import { faFacebookSquare, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
@@ -13,7 +13,7 @@ import { faFacebookSquare, faTwitter, faInstagram, faLinkedin } from '@fortaweso
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* add icons to the library */
-library.add(faAngleDown, faCircleUser, faMagnifyingGlass, faFacebookSquare, faTwitter, faInstagram, faLinkedin, faCopyright, faArrowRightLong, faCircle, faFileLines, faUser)
+library.add(faAngleDown, faCircleUser, faMagnifyingGlass, faFacebookSquare, faTwitter, faInstagram, faLinkedin, faCopyright, faArrowRightLong, faCircle, faFileLines, faUser, faCaretDown, faCaretUp)
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)
