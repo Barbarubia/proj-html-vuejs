@@ -3,13 +3,19 @@
     <header-max-coach /> <!-- Componente che contiene l'header del sito -->
     <main-max-coach /> <!-- Componente che contiene il contenuto del sito, diviso in sezioni -->
     <footer-max-coach /> <!-- Componente che contiene il footer del sito -->
-
+    <!-- Barra fissa laterale -->
     <div class="side-navbar">
       <a href="#"><font-awesome-icon icon="fa-solid fa-ruler-combined" /></a>
       <a href="#"><font-awesome-icon icon="fa-solid fa-life-ring" /></a>
       <a href="#"><font-awesome-icon icon="fa-solid fa-book" /></a>
       <a href="#"><font-awesome-icon icon="fa-solid fa-cart-shopping" /></a>
     </div>
+    <!-- Bottone torna ad inizio pagina fisso in basso a dx -->
+    <a href="#app">
+      <button class="btn-up">
+        <font-awesome-icon icon="fa-solid fa-arrow-up-long" />
+      </button>
+    </a>
   </div>
 </template>
 
@@ -47,6 +53,25 @@ export default {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     font-size: 1.3rem;
     color: $mc-charade;
+  }
+  .btn-up {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background-color: $mc-jungle-green;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    color: $cc-white;
+    cursor: pointer;
+    &:hover {
+      background-color: $cc-tuna;
+    }
   }
 }
 </style>
