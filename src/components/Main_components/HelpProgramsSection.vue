@@ -131,7 +131,7 @@ export default {
 @import "../../assets/scss/partials/variables";
 
 section {
-  background-color: $md-link-water;
+  background-color: $mc-porcelain;
   .container-narrow {
     padding: 4rem 0;
     display: flex;
