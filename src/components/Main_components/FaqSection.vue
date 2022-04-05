@@ -130,6 +130,7 @@ section {
             .question {
               display: flex;
               align-items: center;
+              gap: 1rem;
               .rounded-border {
                 width: 1.3rem;
                 height: 1.3rem;
