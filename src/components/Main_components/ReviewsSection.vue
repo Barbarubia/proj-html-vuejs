@@ -5,7 +5,7 @@
       <h2 class="title">{{ sectionTitle }}</h2>
       <div class="reviews-container">
         <div v-for="student in arrReviews" :key="student.id" class="card-review">
-          <h4>{{ student.mainComment }}</h4>
+          <h4 class="main-comment">{{ student.mainComment }}</h4>
           <p class="review-text">{{ student.text }}</p>
           <div class="student">
             <img class="student-avatar" :src="require('../../assets/img/' + student.image)" :alt="student.student">
@@ -92,6 +92,9 @@ section {
         width: calc(100% / 4 - 2rem);
         margin: 1rem;
         background-color: $cc-white;
+        .main-comment {
+          color: $cc-tuna;
+        }
         .student {
           display: flex;
           align-items: center;
