@@ -27,8 +27,8 @@
         <font-awesome-icon icon="fa-regular fa-circle-user" />
       </button>
       <!-- Barra di ricerca -->
-      <input type="text" name="search" id="search" :placeholder="strPlaceHolderSearch">
-      <button class="btn-search">
+      <input @keyup.enter="searchText(inputText)" v-model="inputText" type="text" name="search" id="search" :placeholder="strPlaceHolderSearch">
+      <button @click="searchText(inputText)" class="btn-search">
         <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
       </button>
     </div>
@@ -42,6 +42,7 @@ export default {
     return {
       selectedLanguage: 'en',
       strPlaceHolderSearch: 'Search...',
+      inputText: '',
       arrLinks: [
         {
           href: '#',
@@ -90,6 +91,10 @@ export default {
   methods: {
     setLanguage (event) {
       this.selectedLanguage = event.target.value
+    },
+    searchText (text) {
+      console.log(text)
+      this.inputText = ''
     }
   }
 }
