@@ -138,15 +138,15 @@ section {
       display: flex;
       overflow-x: hidden;
       .card-review {
-        padding: 1rem;
+        padding: 3rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         border-radius: .5em;
-        gap: 1rem;
+        gap: 2rem;
         flex-shrink: 0;
-        width: calc(100% / 3 - 2rem);
-        margin: 1rem;
+        width: calc(100% / 3 - 4rem);
+        margin: 2rem;
         background-color: $cc-white;
         .main-comment {
           color: $cc-tuna;
