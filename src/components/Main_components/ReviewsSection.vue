@@ -4,17 +4,52 @@
       <h3 class="subtitle">{{ sectionSubtitle }}</h3>
       <h2 class="title">{{ sectionTitle }}</h2>
       <div class="reviews-container">
-        <div v-for="student in arrReviews" :key="student.id" class="card-review">
-          <h4 class="main-comment">{{ student.mainComment }}</h4>
-          <p class="review-text">{{ student.text }}</p>
+        <div @mouseover="stopAutoplay" @mouseleave="autoplay" class="card-review card-review-opacity">
+          <h4 v-if="activeIndex != 0" class="main-comment">{{ arrReviews[activeIndex - 1].mainComment }}</h4>
+          <h4 v-else class="main-comment">{{ arrReviews[arrReviews.length - 1].mainComment }}</h4>
+          <p v-if="activeIndex != 0" class="review-text">{{ arrReviews[activeIndex - 1].text }}</p>
+          <p v-else class="review-text">{{ arrReviews[arrReviews.length - 1].text }}</p>
           <div class="student">
-            <img class="student-avatar" :src="require('../../assets/img/' + student.image)" :alt="student.student">
+            <img v-if="activeIndex != 0" class="student-avatar" :src="require('../../assets/img/' + arrReviews[activeIndex - 1].image)" :alt="arrReviews[activeIndex - 1].student">
+            <img v-else class="student-avatar" :src="require('../../assets/img/' + arrReviews[arrReviews.length - 1].image)" :alt="arrReviews[arrReviews.length - 1].student">
             <div class="student-name-job">
-              <h4>{{ student.student }}</h4>
-              <small>/ {{ student.job}}</small>
+              <h4 v-if="activeIndex != 0">{{ arrReviews[activeIndex - 1].student }}</h4>
+              <h4 v-else>{{ arrReviews[arrReviews.length - 1].student }}</h4>
+              <small v-if="activeIndex != 0">/ {{ arrReviews[activeIndex - 1].job}}</small>
+              <small v-else>/ {{ arrReviews[arrReviews.length - 1].job}}</small>
             </div>
           </div>
         </div>
+        <div @mouseover="stopAutoplay" @mouseleave="autoplay" class="card-review">
+          <h4 class="main-comment">{{ arrReviews[activeIndex].mainComment }}</h4>
+          <p class="review-text">{{ arrReviews[activeIndex].text }}</p>
+          <div class="student">
+            <img class="student-avatar" :src="require('../../assets/img/' + arrReviews[activeIndex].image)" :alt="arrReviews[activeIndex].student">
+            <div class="student-name-job">
+              <h4>{{ arrReviews[activeIndex].student }}</h4>
+              <small>/ {{ arrReviews[activeIndex].job}}</small>
+            </div>
+          </div>
+        </div>
+        <div @mouseover="stopAutoplay" @mouseleave="autoplay" class="card-review card-review-opacity">
+          <h4 v-if="activeIndex != arrReviews.length - 1" class="main-comment">{{ arrReviews[activeIndex - (- 1)].mainComment }}</h4>
+          <h4 v-else class="main-comment">{{ arrReviews[0].mainComment }}</h4>
+          <p v-if="activeIndex != arrReviews.length - 1" class="review-text">{{ arrReviews[activeIndex - (- 1)].text }}</p>
+          <p v-else class="review-text">{{ arrReviews[0].text }}</p>
+          <div class="student">
+            <img v-if="activeIndex != arrReviews.length - 1" class="student-avatar" :src="require('../../assets/img/' + arrReviews[activeIndex - (- 1)].image)" :alt="arrReviews[activeIndex - (- 1)].student">
+            <img v-else class="student-avatar" :src="require('../../assets/img/' + arrReviews[0].image)" :alt="arrReviews[0].student">
+            <div class="student-name-job">
+              <h4 v-if="activeIndex != arrReviews.length - 1">{{ arrReviews[activeIndex - (- 1)].student }}</h4>
+              <h4 v-else>{{ arrReviews[0].student }}</h4>
+              <small v-if="activeIndex != arrReviews.length - 1">/ {{ arrReviews[activeIndex - (- 1)].job}}</small>
+              <small v-else>/ {{ arrReviews[0].job}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dots">
+        <div v-for="(i, index) in arrReviews" :key="index" :class="index == activeIndex ? 'active' : ''" @click="activeIndex = index"><font-awesome-icon icon="fa-solid fa-circle" /></div>
       </div>
     </div>
   </section>
@@ -27,7 +62,7 @@ export default {
     return {
       sectionTitle: 'What make they love us?',
       sectionSubtitle: 'People are prainsing MaxCoach',
-      activeIndex: '1',
+      activeIndex: '0',
       arrReviews: [
         {
           id: '1',
@@ -63,6 +98,27 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    // Funzione che incrementa il valore di activeIndex o lo riporta a zero quando raggiunge l'ultimo elemento dell'array
+    setActiveIndex () {
+      if (this.activeIndex === this.arrReviews.length - 1) {
+        this.activeIndex = 0
+      } else {
+        this.activeIndex++
+      }
+    },
+    // Funzione che esegue l'incremento dell'activeIndex ogni 3 secondi
+    autoplay () {
+      this.interval = setInterval(this.setActiveIndex, 3000)
+    },
+    // Funzione che stoppa l'incremento dell'activeIndex
+    stopAutoplay () {
+      clearInterval(this.interval)
+    }
+  },
+  created () {
+    this.autoplay()
   }
 }
 </script>
@@ -82,14 +138,14 @@ section {
       display: flex;
       overflow-x: hidden;
       .card-review {
-        padding: 2rem;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         border-radius: .5em;
         gap: 1rem;
         flex-shrink: 0;
-        width: calc(100% / 4 - 2rem);
+        width: calc(100% / 3 - 2rem);
         margin: 1rem;
         background-color: $cc-white;
         .main-comment {
@@ -109,6 +165,21 @@ section {
             gap: 1rem;
           }
         }
+        &.card-review-opacity {
+          opacity: .5;
+        }
+      }
+    }
+    .dots {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      color: $cc-silver;
+      font-size: .5rem;
+      .active {
+        color: $mc-charade;
+        font-size: .7rem;
       }
     }
   }
